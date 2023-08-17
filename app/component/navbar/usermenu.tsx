@@ -3,10 +3,18 @@
 import {AiOutlineMenu} from "react-icons/ai"
 import Avatar from "../avatar";
 import { useState, useCallback } from "react";
-
+import MenuItem from "./menuitem";
 const UserMenu=()=>{
     const [isopen, setopen]=useState(false);
     
+  function toggleOpen(){
+    if(isopen){
+        setopen(false);
+    }
+    else if(!isopen){
+        setopen(true)
+    }
+  }
     return(
         <div className="relative">
             <div className="flex flex-row items-center gap 3">
@@ -30,7 +38,7 @@ const UserMenu=()=>{
 
                 </div>
                 <div
-                onClick={()=>{}}
+                onClick={toggleOpen}
                 className="
                 p-4
                 md:py-1
@@ -56,6 +64,35 @@ const UserMenu=()=>{
 
                 </div>
             </div>
+            {isopen&&(
+                <div className="
+                absolute
+                rounded-xl
+                shadow-md
+                w-[40vw]
+                md:w-3/4
+                bg-white
+                overflow-hidden
+                right-0
+                top-12
+                text-sm
+            
+                
+                ">
+                    <div className="flex flex-col cursor-pointer">
+                      <>
+                    <MenuItem
+                    onClick={()=>{}}
+                    label="Login"></MenuItem>
+                     <MenuItem
+                    onClick={()=>{}}
+                    label="Sign up"></MenuItem>
+                      </>
+                    </div>
+                    
+
+                </div>
+            )}
         </div>
     )
 }

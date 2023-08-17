@@ -1,3 +1,4 @@
+"use client"
 import { LOADIPHLPAPI } from "dns"
 import Container from "../container"
 import Logo from "./logo"

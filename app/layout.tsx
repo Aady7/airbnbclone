@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Nunito } from 'next/font/google'
 import Navbar from './component/navbar/navbar'
+import Modal from './component/modals/modal'
 const Font=Nunito({
   subsets:['latin']
 })
@@ -22,6 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={Font.className}>
         <Navbar/>
+        <Modal title="Login Module"
+          isOpen/>
         {children}
         </body>
     </html>
